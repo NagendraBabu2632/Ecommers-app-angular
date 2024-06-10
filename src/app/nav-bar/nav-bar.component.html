@@ -1,0 +1,83 @@
+<div class="nav-header">
+    <div class="nav-content">
+      <div class="nav-bar-mobile-logo-container">
+          <img
+            class="website-logo"
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+            alt="website logo"
+          />
+        <button
+          type="button"
+          class="nav-mobile-btn"
+          onClick={onClickLogout}
+        >
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
+            alt="nav logout"
+            class="nav-bar-img"
+          />
+        </button>
+      </div>
+      <div class="nav-bar-large-container">
+      
+          <img
+            class="website-logo"
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+            alt="website logo"
+          />
+   
+        <ul class="nav-menu">
+          <li class="nav-menu-item" routerLink="/home" routerLinkActive="active">
+              Home
+          </li>
+
+          <li class="nav-menu-item" routerLink="/products" routerLinkActive="active">
+              Products          
+          </li>
+
+          <li class="nav-menu-item" routerLink="/cart" routerLinkActive="active"> 
+              Cart      
+          </li>
+        </ul>
+        <button
+          type="button"
+          class="logout-desktop-btn"
+          routerLink="/login"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+    <div class="nav-menu-mobile">
+      <ul class="nav-menu-list-mobile">
+        <li class="nav-menu-item-mobile">
+        
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-icon.png"
+              alt="nav home"
+              class="nav-bar-img"
+            />
+         
+        </li>
+
+        <li class="nav-menu-item-mobile">
+         
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
+              alt="nav products"
+              class="nav-bar-img"
+            />
+         
+        </li>
+        <li class="nav-menu-item-mobile">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
+              alt="nav cart"
+              class="nav-bar-img"
+            />
+        </li>
+      </ul>
+    </div>
+</div>
+
+

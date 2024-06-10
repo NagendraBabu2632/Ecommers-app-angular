@@ -1,0 +1,56 @@
+<app-nav-bar></app-nav-bar>
+<div class="product-details-success-view">
+    <div class="product-details-container">
+      <img [src]="singleProduct['image_url']" alt="product" class="product-image" />
+      <div class="product">
+        <h1 class="product-name">{{singleProduct.title}}</h1>
+        <p class="price-details">Rs {{singleProduct.price}}/-</p>
+        <div class="rating-and-reviews-count">
+          <div class="rating-container">
+            <p class="rating">{{singleProduct.rating}}</p>
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/star-img.png"
+              alt="star"
+              class="star"
+            />
+          </div>
+          <p class="reviews-count">{{singleProduct.totalReviews}} Reviews</p>
+        </div>
+        <p class="product-description">{{singleProduct.description}}</p>
+        <div class="label-value-container">
+          <p class="label">Available:</p>
+          <p class="value">{{singleProduct.availability}}</p>
+        </div>
+        <div class="label-value-container">
+          <p class="label">Brand:</p>
+          <p class="value">{{singleProduct.brand}}</p>
+        </div>
+        <hr class="horizontal-line" />
+        <div class="quantity-container">
+          <button
+            type="button"
+            class="quantity-controller-button"
+          >
+            
+          </button>
+          <p class="quantity">{{singleProduct.quantity}}</p>
+          <button
+            type="button"
+            class="quantity-controller-button"
+          >
+          </button>
+        </div>
+        <button
+          type="button"
+          class="button add-to-cart-btn"  
+        >
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+    <h1 class="similar-products-heading">Similar Products</h1>
+    <ul class="similar-products-list1">
+        <app-similar-products [similarProducts]="singleProduct.similar_products" (productSelected)="onProductSelected($event)"></app-similar-products>
+    </ul>
+</div>
+

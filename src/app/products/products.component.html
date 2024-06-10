@@ -1,0 +1,71 @@
+<app-nav-bar></app-nav-bar>
+<div class="all-products-section">
+  <div style="padding: 0 40px;">
+<div class="filters-group-container"  >
+  <div class="search-input-container">
+    <input
+  type="search"
+  class="search-input"
+  placeholder="Search"
+  #searchInputRef
+  (keydown)="searchText(searchInputRef.value)"
+/>
+    <mat-icon>search</mat-icon>
+  </div>
+  <h1 className="category-heading">Category</h1>
+  <ul className="categories-list" *ngFor="let cat of categoryOptions">
+    <li
+      className="category-item"><p class="categoryClassName"  [class.active1]="activeCategoryId === cat.categoryId" (click)="getcatId(cat.categoryId)" >
+        {{cat.name}}</p>
+    </li>
+  </ul>
+</div>
+<div>
+  <h1 class="rating-heading">Rating</h1>
+  <ul class="ratings-list"> 
+    <li
+    class="rating-item" *ngFor="let rate of ratingsList" [class.active]="activeRatingId === rate.ratingId" (click)="getrateId(rate.ratingId)"
+  >
+    <img
+      [src]="rate.imageUrl"
+      alt="exp1"
+      class="rating-img"
+    />
+    <p class={ratingClassName}>& up</p>
+  </li>
+</ul>
+<!-- clear btn -->
+      
+<button
+type="button"
+class="clear-filters-btn" 
+(click)="clearAll()"
+>
+Clear Filters
+</button>
+</div>
+</div>
+<div>
+<app-products-header  [activeOptionId]="activeOptionId" (activeOptionIdChange)="onActiveOptionIdChange($event)"></app-products-header>
+<div class="all-products-container" style="width:100%;">
+    <ul class="products-list">
+        <li *ngFor="let product of productDetails.products" class="product-item" [routerLink]="['/single-product', product.id]">
+          <img [src]="product.image_url" alt="{{ product.title }}" class="thumbnail" />
+          <h1 class="title">{{ product.title }}</h1>
+        <p class="brand">by {{ product.brand }}</p>
+        <div class="product-details">
+          <p class="price">Rs  {{ product.price }}/-</p>
+          <div class="rating-container">
+            <p class="rating">{{ product.rating }}</p>
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/star-img.png"
+              alt="star"
+              className="star"
+            />
+          </div>
+        </div>
+        </li>
+      </ul> 
+</div>
+</div>
+</div>

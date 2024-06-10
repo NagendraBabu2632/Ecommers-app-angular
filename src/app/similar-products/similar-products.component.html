@@ -1,0 +1,20 @@
+<li class="similar-product-item" *ngFor="let sim of similarProducts"  (click)="changetoPrd(sim.id)" [routerLink]="['/single-product', sim.id]">
+    <img
+      [src]="sim.image_url"
+      class="similar-product-img"
+      alt="exp"
+    />
+    <p class="similar-product-title">{{sim.title}}</p>
+    <p class="similar-products-brand">by {{sim.brand}}</p>
+    <div class="similar-product-price-rating-container">
+      <p class="similar-product-price">Rs {{sim.price}}/-</p>
+      <div class="similar-product-rating-container">
+        <p class="similar-product-rating">{{sim.rating}}</p>
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/star-img.png"
+          alt="star"
+          class="similar-product-star"
+        />
+      </div>
+    </div>
+  </li>

@@ -1,0 +1,10 @@
+<div class="products-header">
+    <h1 class="products-list-heading">All Products</h1>
+    <div class="sort-by-container">
+      <label class="sort-by-label">Sort by:</label>
+      <select class="sort-by-select" #mySelect (change)="updateActiveOptionId(mySelect.value)">
+        <option *ngFor="let sor of sortbyOptions" [value]="sor.displayText" [value]="sor.optionId">{{ sor.displayText }}</option>
+      </select>
+    </div>
+  </div>
+  
